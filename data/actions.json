@@ -1,0 +1,58 @@
+{
+  "_how_to_read": "usage_multiplier scales a resource's daily usage (0.9 = use 10% less). usage_offset adds or removes a fixed amount per day (negative = saves, positive = costs). add_backup moves that resource's backup reserve into the main supply.",
+  "ration_food": {
+    "title": "Ration food by 10%",
+    "for_resource": "food",
+    "why": "Smallest change that stretches food without stopping work.",
+    "usage_multiplier": { "food": 0.9 }
+  },
+  "use_backup_food": {
+    "title": "Open the backup food reserve",
+    "for_resource": "food",
+    "why": "Emergency reserve. Once it is used, there is no second safety net.",
+    "add_backup": "food"
+  },
+  "prioritize_greenhouse": {
+    "title": "Prioritize greenhouse production",
+    "for_resource": "food",
+    "why": "Grows ~0.6 kg of food per day but the grow lights cost ~4 kWh per day.",
+    "usage_offset": { "food": -0.6, "energy": 4 }
+  },
+  "repair_water_recycler": {
+    "title": "Repair water recycling first",
+    "for_resource": "water",
+    "why": "A better recovery rate cuts net water use by about 20%.",
+    "usage_multiplier": { "water": 0.8 }
+  },
+  "use_backup_water": {
+    "title": "Open the backup water reserve",
+    "for_resource": "water",
+    "why": "Emergency reserve. Use only if recycling cannot be fixed in time.",
+    "add_backup": "water"
+  },
+  "repair_air_system": {
+    "title": "Repair air filtration first",
+    "for_resource": "oxygen",
+    "why": "Cuts oxygen losses by about 15%, but the repair runs extra equipment (~2 kWh/day).",
+    "usage_multiplier": { "oxygen": 0.85 },
+    "usage_offset": { "energy": 2 }
+  },
+  "use_backup_oxygen": {
+    "title": "Open the backup oxygen candles",
+    "for_resource": "oxygen",
+    "why": "Emergency reserve for air.",
+    "add_backup": "oxygen"
+  },
+  "reduce_energy": {
+    "title": "Reduce nonessential energy use by 15%",
+    "for_resource": "energy",
+    "why": "Dim non-work areas and pause low-priority experiments.",
+    "usage_multiplier": { "energy": 0.85 }
+  },
+  "use_backup_energy": {
+    "title": "Switch to the backup battery bank",
+    "for_resource": "energy",
+    "why": "Emergency reserve for power.",
+    "add_backup": "energy"
+  }
+}

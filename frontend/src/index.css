@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* Design tokens: one neutral ground, one accent, three status colours. */
+@theme {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --color-canvas: #f4f4f1;
+  --color-surface: #ffffff;
+  --color-sunken: #f7f7f4;
+  --color-line: #e3e3de;
+  --color-ink: #16181d;
+  --color-sub: #5b606b;
+  --color-accent: #2741d6;
+  --color-accent-soft: #eceffd;
+
+  --color-ok: #18794e;
+  --color-ok-soft: #e7f4ec;
+  --color-warn: #9a5700;
+  --color-warn-soft: #fdf1de;
+  --color-bad: #b9332a;
+  --color-bad-soft: #fbe9e7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Space theme: deep-space page; stars are drawn by SpaceBackground.jsx */
+body[data-theme="space"] {
+  background: #070a14;
+}
+
+/* Parts that sit directly on space (sidebar, page header) use night colours.
+   Cards keep the light colours so numbers stay easy to read. */
+.on-space {
+  --color-surface: #0e1322;
+  --color-sunken: #1a2036;
+  --color-line: #283048;
+  --color-ink: #eef1fa;
+  --color-sub: #a4acc4;
+  color: var(--color-ink);
+}
+
+/* Put light colours back inside a night area (e.g. the scan dropdown). */
+.on-light {
+  --color-surface: #ffffff;
+  --color-sunken: #f7f7f4;
+  --color-line: #e3e3de;
+  --color-ink: #16181d;
+  --color-sub: #5b606b;
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .twinkle {
+    animation: twinkle 4s ease-in-out infinite;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* Numbers line up in columns */
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}

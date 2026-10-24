@@ -1,0 +1,51 @@
+[
+  {
+    "id": "normal_food",
+    "name": "Normal food shipment",
+    "description": "Cool, dry, full weight. Should be accepted and push food from 24 to 30 days.",
+    "shipment_type": "food",
+    "readings": { "temperature_c": 18.0, "humidity_pct": 40, "weight_g": 500, "distance_cm": 8 }
+  },
+  {
+    "id": "normal_water",
+    "name": "Normal water shipment",
+    "description": "Everything in range. Should be accepted.",
+    "shipment_type": "water",
+    "readings": { "temperature_c": 16.5, "humidity_pct": 45, "weight_g": 990, "distance_cm": 9 }
+  },
+  {
+    "id": "warm_food",
+    "name": "Slightly warm food shipment",
+    "description": "29 C is above the normal range but not dangerous yet. Crew should inspect.",
+    "shipment_type": "food",
+    "readings": { "temperature_c": 29.0, "humidity_pct": 48, "weight_g": 490, "distance_cm": 8 }
+  },
+  {
+    "id": "overheated_food",
+    "name": "Overheated food shipment",
+    "description": "42 C means the cooling failed in transit. Should be quarantined.",
+    "shipment_type": "food",
+    "readings": { "temperature_c": 42.0, "humidity_pct": 55, "weight_g": 492, "distance_cm": 8 }
+  },
+  {
+    "id": "underweight_food",
+    "name": "Underweight food shipment",
+    "description": "Only 68% of the expected weight arrived. Possible breach or missing items.",
+    "shipment_type": "food",
+    "readings": { "temperature_c": 19.0, "humidity_pct": 42, "weight_g": 340, "distance_cm": 8 }
+  },
+  {
+    "id": "damaged_air_filter",
+    "name": "Damaged air-filter kit",
+    "description": "Light package and the humidity sensor returned nothing. Should be quarantined.",
+    "shipment_type": "air_filter",
+    "readings": { "temperature_c": 21.0, "humidity_pct": null, "weight_g": 180, "distance_cm": 10 }
+  },
+  {
+    "id": "normal_battery",
+    "name": "Normal battery pack",
+    "description": "Battery in range. Adds energy reserve.",
+    "shipment_type": "battery",
+    "readings": { "temperature_c": 20.0, "humidity_pct": 35, "weight_g": 398, "distance_cm": 9 }
+  }
+]

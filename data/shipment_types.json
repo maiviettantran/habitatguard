@@ -1,0 +1,35 @@
+{
+  "_how_to_read": "Each sensor has an 'ok' range and a wider 'inspect' range. Inside ok = pass. Inside inspect but outside ok = Inspect. Outside inspect = Quarantine. null means that sensor is not checked for this shipment type. expected_weight_g is the weight of the physical demo prop on the load cell; payload_amount is how much of the resource the real shipment represents.",
+  "food": {
+    "label": "Food crate",
+    "resource": "food",
+    "payload_amount": 43.2,
+    "expected_weight_g": 500,
+    "temperature_c": { "ok": [2, 25], "inspect": [-5, 35] },
+    "humidity_pct": { "ok": [0, 60], "inspect": [0, 75] }
+  },
+  "water": {
+    "label": "Water tank",
+    "resource": "water",
+    "payload_amount": 100,
+    "expected_weight_g": 1000,
+    "temperature_c": { "ok": [4, 30], "inspect": [1, 40] },
+    "humidity_pct": null
+  },
+  "air_filter": {
+    "label": "Air-filter & O2 cartridge kit",
+    "resource": "oxygen",
+    "payload_amount": 16.8,
+    "expected_weight_g": 300,
+    "temperature_c": { "ok": [5, 30], "inspect": [0, 40] },
+    "humidity_pct": { "ok": [0, 50], "inspect": [0, 65] }
+  },
+  "battery": {
+    "label": "Battery pack",
+    "resource": "energy",
+    "payload_amount": 140,
+    "expected_weight_g": 400,
+    "temperature_c": { "ok": [10, 30], "inspect": [0, 40] },
+    "humidity_pct": { "ok": [0, 60], "inspect": [0, 80] }
+  }
+}

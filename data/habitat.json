@@ -1,0 +1,49 @@
+{
+  "mission": {
+    "name": "Shackleton Outpost (simulated)",
+    "location": "Lunar south pole",
+    "crew_size": 4,
+    "next_resupply_in_days": 28
+  },
+  "resources": {
+    "food": {
+      "label": "Food",
+      "unit": "kg",
+      "amount": 172.8,
+      "per_crew": true,
+      "usage_per_crew_per_day": 1.8,
+      "backup_amount": 21.6
+    },
+    "water": {
+      "label": "Water",
+      "unit": "L",
+      "amount": 400,
+      "per_crew": true,
+      "usage_per_crew_per_day": 2.5,
+      "backup_amount": 40
+    },
+    "oxygen": {
+      "label": "Oxygen",
+      "unit": "kg",
+      "amount": 100.8,
+      "per_crew": true,
+      "usage_per_crew_per_day": 0.84,
+      "backup_amount": 10
+    },
+    "energy": {
+      "label": "Energy",
+      "unit": "kWh",
+      "amount": 700,
+      "per_crew": false,
+      "usage_per_day": 20,
+      "backup_amount": 60
+    }
+  },
+  "assumptions": [
+    "Per-crew daily usage for food (~1.8 kg incl. packaging), drinking water (~2.5 L) and oxygen (~0.84 kg) are rounded from NASA's Life Support Baseline Values and Assumptions Document (BVAD). Verify against the current BVAD before quoting exact numbers.",
+    "Energy use (20 kWh/day for the whole habitat) is a round prototype assumption, not a real mission value.",
+    "Water is modeled as net consumption after recycling, so we do not simulate the recycling loop itself.",
+    "Starting amounts are chosen so food is the bottleneck at the start of the demo (24 days vs. a 28-day resupply window).",
+    "This is a HACCP-inspired supply-risk screening prototype. It is not a certified food-safety system."
+  ]
+}
