@@ -92,22 +92,42 @@ habitatguard/
 
 ## Running it
 
-**1. Backend** (Python 3.10+)
+The dashboard is already built (`frontend/dist`), so running the demo only needs **Python 3.10+**. No Node.js needed.
+
+### 1. Get the code
+
+```bash
+git clone https://github.com/maiviettantran/habitatguard.git
+cd habitatguard
+```
+No git? On the GitHub page click **Code → Download ZIP**, then unzip it.
+
+### 2. Start it
+
+**Windows:** double-click `RUN_HABITATGUARD.bat`. It installs the Python packages, starts the server and opens the dashboard. Close the "HabitatGuard server" window to stop it.
+
+**Mac / Linux:**
 ```bash
 cd backend
-pip install -r requirements.txt
-uvicorn app:app --reload --host 0.0.0.0 --port 8000
+python3 -m pip install -r requirements.txt
+python3 -m uvicorn app:app --host 0.0.0.0 --port 8000
 ```
+Then open **http://localhost:8000**.
 
-**2. Frontend** (Node 18+), in a second terminal
+### 3. Try the demo
+
+Click **Simulate scan** and run: *Overheated food* → *Normal food* → *Slightly warm food* (then **Approve**) → **Apply plan**. **Reset mission** in the sidebar starts over.
+
+### Editing the dashboard (developers, needs Node 18+)
+
 ```bash
+# terminal 1: backend as above
+# terminal 2:
 cd frontend
 npm install
-npm run dev
+npm run dev        # live-reload at http://localhost:5173
+npm run build      # when done: updates frontend/dist, commit it
 ```
-Open http://localhost:5173.
-
-**Single-server option for demo day:** run `npm run build` in `frontend/` once, then only the backend is needed — open http://localhost:8000.
 
 **3. Hardware (optional)**
 - Install the three Arduino libraries listed at the top of the `.ino` file.
